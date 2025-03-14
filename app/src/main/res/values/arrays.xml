@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="area_array">
+        <item>16567</item>
+        <item>69420</item>
+    </string-array>
+    <string-array name="state_array">
+        <item>Montana</item>
+        <item>Utah</item>
+        <item>Colorado</item>
+    </string-array>
+</resources>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">MyTestApp</string>
+    <string name="hallo_alle_zusammen">Hallo alle zusammen!</string>
+    <string name="click_me">Click me!</string>
+    <string name="benutzername">Benutzername:</string>
+    <string name="passwort">Passwort:</string>
+    <string name="login">Login</string>
+    <string name="text">TEXT</string>
+    <string name="edit_text">EDIT TEXT</string>
+    <string name="buttonText">Button</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="area">Area</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="zip">Zip</string>
+    <string name="email">Email</string>
+    <string name="birthday">Birthday</string>
+    <string name="name2">Name</string>
+    <string name="wohnort">Wohnort</string>
+    <string name="anzeigetv">AnzeigeTV</string>
+</resources>
