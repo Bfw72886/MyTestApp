@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // XML Elemente in Java erstellen
     private EditText nameET, wohnOrtET;
     private AppCompatButton sendB;
+    private AppCompatButton switchB;
     private TextView anzeigeTV;
 
     private String name;
@@ -38,12 +39,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wohnOrtET = findViewById(R.id.wohnOrtET);
         sendB = findViewById(R.id.sendB);
         anzeigeTV = findViewById(R.id.anzeigeTV);
+        switchB = findViewById(R.id.switchB);
 
         // Werte aus den Eingabefeldern holen und speichern
         name = nameET.getText().toString();
         wohnort = wohnOrtET.getText().toString();
 
         sendB.setOnClickListener(this);
+
+        /*
+        - anonymous onClickListener -
+        sendB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                do something
+            }
+        });
+
+        sendB.setOnClickListener(v -> {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        */
+
     }
 
     @Override

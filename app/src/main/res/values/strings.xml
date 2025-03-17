@@ -20,4 +20,7 @@
     <string name="name2">Name</string>
     <string name="wohnort">Wohnort</string>
     <string name="anzeigetv">AnzeigeTV</string>
+    <string name="name_und_wohnort_senden">Name und wohnort senden</string>
+    <string name="senden">senden</string>
+    <string name="switch_view">switch view</string>
 </resources>
