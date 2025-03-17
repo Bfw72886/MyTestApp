@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         wohnort = wohnOrtET.getText().toString();
 
         sendB.setOnClickListener(this);
+        switchB.setOnClickListener(this);
 
         /*
         - anonymous onClickListener -
