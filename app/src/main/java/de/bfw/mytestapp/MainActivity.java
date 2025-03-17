@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // expliziter Intent
         if (v.getId() == switchB.getId()) {
             Intent intent = new Intent(this, MainActivity2.class);
+            intent.putExtra("name", name);
+            intent.putExtra("wohnort", wohnort);
             startActivity(intent);
         }
     }
