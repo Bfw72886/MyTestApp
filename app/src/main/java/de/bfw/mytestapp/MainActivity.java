@@ -1,5 +1,6 @@
 package de.bfw.mytestapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -78,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Name: " + name + "\nWohnort: " + wohnort, Toast.LENGTH_SHORT).show();
 
             anzeigeTV.setText("Name: " + name + "\nWohnort: " + wohnort);
+        }
+
+        // Von "this" zu "MainActivity2.class" switchen
+        // expliziter Intent
+        if (v.getId() == switchB.getId()) {
+            Intent intent = new Intent(this, MainActivity2.class);
         }
     }
 }
