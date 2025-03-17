@@ -3,6 +3,7 @@ package de.bfw.mytestapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +31,12 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         switchB = findViewById(R.id.switchB);
 
         switchB.setOnClickListener(this);
+
+        String name = getIntent().getStringExtra("name");
+        String wohnort = getIntent().getStringExtra("wohnort");
+
+        Toast.makeText(this, "Name: " + name, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Wohnort: " + wohnort, Toast.LENGTH_SHORT).show();
     }
 
     @Override
