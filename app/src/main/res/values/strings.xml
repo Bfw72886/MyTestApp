@@ -23,4 +23,6 @@
     <string name="name_und_wohnort_senden">Name und wohnort senden</string>
     <string name="senden">senden</string>
     <string name="switch_view">switch view</string>
+    <string name="dein_name">Dein Name</string>
+    <string name="dein_wohnort">Dein Wohnort</string>
 </resources>
