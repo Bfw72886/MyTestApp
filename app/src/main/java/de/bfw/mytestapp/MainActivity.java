@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         });
 
          */
-        preferences = getPreferences(Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
         editor = preferences.edit();
 
         // laden eines Wertes
@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             name = nameET.getText().toString();
             wohnort = wohnOrtET.getText().toString();
 
+            editor.putString("name", name);
+            editor.putString("wohnort", wohnort);
+            editor.apply();
+
             // Toast = kleines Infofenster / leckeres Frühstück
             Toast.makeText(this, "Name: " + name + "\nWohnort: " + wohnort, Toast.LENGTH_SHORT).show();
 
@@ -111,8 +115,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // expliziter Intent
         if (v.getId() == switchB.getId()) {
             Intent intent = new Intent(this, MainActivity2.class);
+            /*
             intent.putExtra("name", name);
             intent.putExtra("wohnort", wohnort);
+             */
+            editor.putString("name", name);
+            editor.putString("wohnort", wohnort);
+            editor.apply();
             startActivity(intent);
         }
     }

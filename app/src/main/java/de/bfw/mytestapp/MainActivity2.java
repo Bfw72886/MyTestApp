@@ -1,6 +1,8 @@
 package de.bfw.mytestapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity2 extends AppCompatActivity implements View.OnClickListener{
 
     AppCompatButton switchB;
+    SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +35,13 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
 
         switchB.setOnClickListener(this);
 
+        /*
         String name = getIntent().getStringExtra("name");
         String wohnort = getIntent().getStringExtra("wohnort");
+        */
+        preferences = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
+        String name = preferences.getString("name", "???");
+        String wohnort = preferences.getString("wohnort", "???");
 
         Toast.makeText(this, "Name: " + name, Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "Wohnort: " + wohnort, Toast.LENGTH_SHORT).show();
