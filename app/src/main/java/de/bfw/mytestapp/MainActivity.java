@@ -1,11 +1,13 @@
 package de.bfw.mytestapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,19 +23,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String name;
     private String wohnort;
+    private boolean firstRun;
+
+    // SharedPreferences Datei öffnen
+    SharedPreferences preferences;
+    // öffnen des Editors (wird nur zum Speichern benötigt)
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.uebung2_constraint);
         /*
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        */
+
+         */
+        preferences = getPreferences(Context.MODE_PRIVATE);
+        editor = preferences.edit();
+
+        // laden eines Wertes
+        this.firstRun = preferences.getBoolean("firstRunMyEmailClient",false);
+
+        if (firstRun) {
+            Intent intent = new Intent(this, MainActivity2.class);
+            startActivity(intent);
+        }
+
+        setContentView(R.layout.uebung2_constraint);
 
         // Java Objekte mit XML Objekten verknüpfen
         nameET = findViewById(R.id.nameET);
@@ -48,6 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         sendB.setOnClickListener(this);
         switchB.setOnClickListener(this);
+
+        // speichern eines Key/Value-Paares
+        editor.putBoolean("firstRunMyEmailClient", true);
+        // Speichern abschliessen
+        editor.apply();
 
         /*
         - anonymous onClickListener -
